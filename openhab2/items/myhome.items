@@ -1,0 +1,11 @@
+Group Graph "Historical query" <chart>
+Group LivingRoomTemp (Graph)
+
+
+Number Living_Temperature "Temperature [%.1f °C]" <temperature> (LivingRoomTemp) {mqtt="<[mosquitto:sensor/temperature:state:default]"}
+Number Living_Humidity "Humidity: [%.0f %%] %" <humidity> (Graph) {mqtt="<[mosquitto:sensor/humidity:state:default]"}
+Number Living_Set "Set Temp [%.1f °C]" <temperature> (LivingRoomTemp)
+Switch Switch1 "Living Light" (LivingRoom,Graph) {mqtt="<[mosquitto:switchout:state:default], >[mosquitto:switchin:command:ON:1], >[mosquitto:switchin:command:OFF:0]"}
+Switch Switch2 "Living Light low" (LivingRoom,Graph) {mqtt="<[mosquitto:switchout:state:default], >[mosquitto:switchin:command:ON:2], >[mosquitto:switchin:command:OFF:3]"}
+Number Temp_Chart_Period "Chart Period" {mqtt="<[mosquitto:period_chart:state:default], >[mosquitto:period_chart:command:1:1],  >[mosquitto:period_chart:command:0:0],  >[mosquitto:period_chart:command:2:2],  >[mosquitto:period_chart:command:3:3]"}
+Number Switch3 "Living Room Light" (LivingRoom,Graph) {mqtt="<[mosquitto:switchin:state:default], >[mosquitto:switchin:command:0:0], >[mosquitto:switchin:command:1:1], >[mosquitto:switchin:command:2:2], >[mosquitto:switchin:command:3:3]"}

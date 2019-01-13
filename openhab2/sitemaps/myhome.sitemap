@@ -1,0 +1,33 @@
+sitemap myhome label="My Home" {
+    Frame {
+        Setpoint item=Living_Set label="Set temp" minValue=4.5 maxValue=30 step=0.5
+
+//        Switch item=Switch1 label="Living High" icon="switch"
+//        Switch item=Switch2 label="Living Low" icon="switch"
+         Switch item=Switch3 label="Living room light" icon="switch" mappings=[0="OFF",2="LOW",3="HIGH",1="FULL"]
+
+    }
+
+    Frame {
+        Text item=Living_Temperature label="Temperature" icon="temperature"
+
+
+        Text item=Living_Humidity label="Humidity" icon="humidity"
+
+    }
+    Frame label="Historical data" icon="chart"  {
+       Group item=Graph label="Query history" {
+         Switch item=Temp_Chart_Period label="Chart Period" icon="chart" mappings=[0="Hour",1="4 Hours", 2="Day", 3="Week"]
+         Chart item=LivingRoomTemp period=h refresh=600000 visibility=[Temp_Chart_Period==0,Temp_Chart_Period=="NULL"]
+         Chart item=LivingRoomTemp period=4h refresh=3600000 visibility=[Temp_Chart_Period==1]
+         Chart item=LivingRoomTemp period=D refresh=3600000 visibility=[Temp_Chart_Period==2]
+         Chart item=LivingRoomTemp period=W refresh=3600000 visibility=[Temp_Chart_Period==3]
+         Chart item=Living_Humidity period=h refresh=600000 visibility=[Temp_Chart_Period==0, Temp_Chart_Period=="NULL"]
+         Chart item=Living_Humidity period=4h refresh=3600000 visibility=[Temp_Chart_Period==1]
+         Chart item=Living_Humidity period=D refresh=3600000 visibility=[Temp_Chart_Period==2]
+         Chart item=Living_Humidity period=W refresh=3600000 visibility=[Temp_Chart_Period==3]
+
+      }
+    }
+}
+
