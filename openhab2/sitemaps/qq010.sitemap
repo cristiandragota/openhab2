@@ -1,0 +1,23 @@
+sitemap qq010 label="Environment" {
+    Frame label="Bedroom" {
+        Text item=Bedroom_Temperature label="Temperature" icon="temperature"
+        Text item=Bedroom_Humidity label="Humidity" icon="humidity"
+	Setpoint item=QQ010_G0_bedroom_temp_set label="Set temp" icon="temperature"
+
+    }
+
+    Frame label="Historical data" icon="chart"  {
+       Group item=Graph label="Query history" {
+         Switch item=Chart_Period label="Chart Period" icon="chart" mappings=[0="Hour",1="4 Hours", 2="Day", 3="Week"]
+         Chart item=Bedroom_Temperature period=h refresh=600000 visibility=[Chart_Period==0,Chart_Period=="NULL"]
+         Chart item=Bedroom_Temperature period=4h refresh=3600000 visibility=[Chart_Period==1]
+         Chart item=Bedroom_Temperature period=D refresh=3600000 visibility=[Chart_Period==2]
+         Chart item=Bedroom_Temperature period=W refresh=3600000 visibility=[Chart_Period==3]
+         Chart item=Bedroom_Humidity period=h refresh=600000 visibility=[Chart_Period==0, Chart_Period=="NULL"]
+         Chart item=Bedroom_Humidity period=4h refresh=3600000 visibility=[Chart_Period==1]
+         Chart item=Bedroom_Humidity period=D refresh=3600000 visibility=[Chart_Period==2]
+         Chart item=Bedroom_Humidity period=W refresh=3600000 visibility=[Chart_Period==3]
+
+      }
+    }
+}

@@ -1,5 +1,12 @@
-Your persistence configuration goes here.
-All persistence files have to have the ".persist" file extension and must follow a special syntax.
+Strategies {
+everyMinute     : "0 * * * * ?"
+every2Minutes : "0 */2 * * * ?"
+every5Minutes : "0 */5 * * * ?"
+everyHour   : "0 0 * * * ?"
+everyDay    : "0 0 0 * * ?"
+}
 
-Check out the openHAB documentation for more details:
-https://www.openhab.org/docs/configuration/persistence.html
+Items {
+  * : strategy = every2Minutes, restoreOnStartup
+
+}
