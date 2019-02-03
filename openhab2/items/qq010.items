@@ -1,4 +1,4 @@
-Group Graph "Historical query" <chart>
+Group Graph2 "Historical query" <chart>
 
 Number Bedroom_Humidity "Humidity: [%.0f %%] %" <humidity> {mqtt="<[oh2:QQ010/G0/bedroom/hum/get:state:default]"}
 Number Bedroom_Set_Temp "Set Temp [%.1f °C]" <temperature> {mqtt="<[oh2:QQ010/G0/bedroom/temp/set:state:default]"}
