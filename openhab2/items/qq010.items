@@ -1,6 +1,6 @@
 Group Graph3 "Historical query" <chart>
-Number QQ010_G0_bedroom_temp1_get "Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/get:state:default]"}
-Number QQ010_G0_bedroom_temp1_set "Set Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/set:state:default], >[mosquitto:QQ010/G0/bedroom/temp1/set:command:*:default]"}
+Number QQ010_G0_bedroom_temp1_get "Temperature [%.1f Â°C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/get:state:default]"}
+Number QQ010_G0_bedroom_temp1_set "Set Temperature [%.1f Â°C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/set:state:default], >[mosquitto:QQ010/G0/bedroom/temp1/set:command:*:default]"}
 Number QQ010_G0_bedroom_hum1_get "Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/bedroom/hum1/get:state:default]"}
 Number QQ010_G0_bedroom_hum1_set "Set Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/bedroom/hum1/set:state:default], >[mosquitto:QQ010/G0/bedroom/hum1/set:command:*:default]"}
 Switch QQ010_G0_bedroom_switch1_set "bedroom heater" {mqtt="<[mosquitto:QQ010/G0/bedroom/switch1/set:state:default], >[mosquitto:QQ010/G0/bedroom/switch1/set:command:*:default]"}
