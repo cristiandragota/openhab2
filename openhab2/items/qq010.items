@@ -1,18 +1,18 @@
 Group Graph3 "Historical query" <chart>
-Number QQ010_G0_bedroom_temp1_get "Temperature [%.1f 캜]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/get:state:default]"}
-Number QQ010_G0_bedroom_temp1_set "Set Temperature [%.1f 캜]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/set:state:default], >[mosquitto:QQ010/G0/bedroom/temp1/set:command:*:default]"}
+Number QQ010_G0_bedroom_temp1_get "Temperature [%.1f 째C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/get:state:default]"}
+Number QQ010_G0_bedroom_temp1_set "Set Temperature [%.1f 째C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/set:state:default], >[mosquitto:QQ010/G0/bedroom/temp1/set:command:*:default]"}
 Number QQ010_G0_bedroom_hum1_get "Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/bedroom/hum1/get:state:default]"}
 Number QQ010_G0_bedroom_hum1_set "Set Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/bedroom/hum1/set:state:default], >[mosquitto:QQ010/G0/bedroom/hum1/set:command:*:default]"}
 Switch QQ010_G0_bedroom_switch1_set "bedroom heater" {mqtt="<[mosquitto:QQ010/G0/bedroom/switch1/set:state:default], >[mosquitto:QQ010/G0/bedroom/switch1/set:command:*:default]"}
 Switch QQ010_G0_bedroom_switch2_set "bedroom humidifier" {mqtt="<[mosquitto:QQ010/G0/bedroom/switch2/set:state:default], >[mosquitto:QQ010/G0/bedroom/switch2/set:command:*:default]"}
-Number QQ010_G0_livingroom_temp1_get "Temperature [%.1f 캜]" <temperature> {mqtt="<[mosquitto:QQ010/G0/livingroom/temp1/get:state:default]"}
-Number QQ010_G0_livingroom_temp1_set "Set Temperature [%.1f 캜]" <temperature> {mqtt="<[mosquitto:QQ010/G0/livingroom/temp1/set:state:default], >[mosquitto:QQ010/G0/livingroom/temp1/set:command:*:default]"}
+Number QQ010_G0_livingroom_temp1_get "Temperature [%.1f 째C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/livingroom/temp1/get:state:default]"}
+Number QQ010_G0_livingroom_temp1_set "Set Temperature [%.1f 째C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/livingroom/temp1/set:state:default], >[mosquitto:QQ010/G0/livingroom/temp1/set:command:*:default]"}
 Number QQ010_G0_livingroom_hum1_get "Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/livingroom/hum1/get:state:default]"}
 Number QQ010_G0_livingroom_hum1_set "Set Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/livingroom/hum1/set:state:default], >[mosquitto:QQ010/G0/livingroom/hum1/set:command:*:default]"}
 Switch QQ010_G0_livingroom_switch1_set "livingroom heater" {mqtt="<[mosquitto:QQ010/G0/livingroom/switch1/set:state:default], >[mosquitto:QQ010/G0/livingroom/switch1/set:command:*:default]"}
 Switch QQ010_G0_livingroom_switch2_set "livingroom humidifier" {mqtt="<[mosquitto:QQ010/G0/livingroom/switch2/set:state:default], >[mosquitto:QQ010/G0/livingroom/switch2/set:command:*:default]"}
 Switch QQ010_G0_kitchen_switch1_set "kitchen heater" {mqtt="<[mosquitto:QQ010/G0/kitchen/switch1/set:state:default], >[mosquitto:QQ010/G0/kitchen/switch1/set:command:*:default]"}
-Number QQ010_G0_kitchen_temp1_get "Temperature [%.1f 캜]" <temperature> {mqtt="<[mosquitto:QQ010/G0/kitchen/temp1/get:state:default]"}
-Number QQ010_G0_kitchen_temp1_set "Set Temperature [%.1f 캜]" <temperature> {mqtt="<[mosquitto:QQ010/G0/kitchen/temp1/set:state:default], >[mosquitto:QQ010/G0/kitchen/temp1/set:command:*:default]"}
+Number QQ010_G0_kitchen_temp1_get "Temperature [%.1f 째C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/kitchen/temp1/get:state:default]"}
+Number QQ010_G0_kitchen_temp1_set "Set Temperature [%.1f 째C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/kitchen/temp1/set:state:default], >[mosquitto:QQ010/G0/kitchen/temp1/set:command:*:default]"}
 Number QQ010_G0_kitchen_hum1_get "Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/kitchen/hum1/get:state:default]"}
 
