@@ -1,11 +1,25 @@
-sitemap qq010 label="Environment" {
+sitemap qq010 label="QQ010" {
     Frame label="Bedroom" {
-        Text item=QQ010_G0_bedroom_temp1_get icon="temperature"
-		Setpoint item=QQ010_G0_bedroom_temp1_set icon="temperature"
+		Text item=QQ010_G0_bedroom_temp1_get icon="temperature"
+		Setpoint item=QQ010_G0_bedroom_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
 		Switch item=QQ010_G0_bedroom_switch1_set icon="switch"
 		Text item=QQ010_G0_bedroom_hum1_get icon="humidity"
-		Setpoint item=QQ010_G0_bedroom_hum1_set icon="humidity"
-		Switch item=QQ010_G0_bedroom_switch2_set icon="switch"
+		Setpoint item=QQ010_G0_bedroom_hum1_set icon="humidity" minValue=20 maxValue=100 step=5
+		Switch item=QQ010_G0_bedroom_switch2_set icon="switch"	
+    }
+    Frame label="Livingroom" {
+		Text item=QQ010_G0_livingroom_temp1_get icon="temperature"
+		Setpoint item=QQ010_G0_livingroom_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
+		Switch item=QQ010_G0_livingroom_switch1_set icon="switch"
+		Text item=QQ010_G0_livingroom_hum1_get icon="humidity"
+		Setpoint item=QQ010_G0_livingroom_hum1_set icon="humidity" minValue=20 maxValue=100 step=5
+		Switch item=QQ010_G0_livingroom_switch2_set icon="switch"
+    }
+    Frame label="Kitchen" {
+    	Text item=QQ010_G0_kitchen_temp1_get icon="temperature"
+		Setpoint item=QQ010_G0_kitchen_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
+		Switch item=QQ010_G0_kitchen_switch1_set icon="switch"
+		Text item=QQ010_G0_kitchen_hum1_get icon="humidity"
     }
 
 }
