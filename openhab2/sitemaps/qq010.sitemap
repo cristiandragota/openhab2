@@ -5,7 +5,8 @@ sitemap qq010 label="QQ010" {
 		Switch item=QQ010_G0_bedroom_switch1_set icon="switch"
 		Text item=QQ010_G0_bedroom_hum1_get icon="humidity"
 		Setpoint item=QQ010_G0_bedroom_hum1_set icon="humidity" minValue=20 maxValue=100 step=5
-		Switch item=QQ010_G0_bedroom_switch2_set icon="switch"	
+		Switch item=QQ010_G0_bedroom_switch2_set icon="switch"
+			
     }
     Frame label="Livingroom" {
 		Text item=QQ010_G0_livingroom_temp1_get icon="temperature"

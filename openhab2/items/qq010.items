@@ -15,3 +15,4 @@ Switch QQ010_G0_kitchen_switch1_set "kitchen heater" {mqtt="<[mosquitto:QQ010/G0
 Number QQ010_G0_kitchen_temp1_get "Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/kitchen/temp1/get:state:default]"}
 Number QQ010_G0_kitchen_temp1_set "Set Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/kitchen/temp1/set:state:default], >[mosquitto:QQ010/G0/kitchen/temp1/set:command:*:default]"}
 Number QQ010_G0_kitchen_hum1_get "Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/kitchen/hum1/get:state:default]"}
+
