@@ -1,5 +1,5 @@
-sitemap qq010 label="QQ010" {
-    Group item=G0_bedroom {
+sitemap qq010 label="My data" {
+    Frame label="G0_bedroom" {
 		Text item=QQ010_G0_bedroom_temp1_get icon="temperature"
 		Setpoint item=QQ010_G0_bedroom_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
 		Switch item=QQ010_G0_bedroom_switch1_set icon="switch"
