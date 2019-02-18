@@ -3,11 +3,11 @@ when
    Item QQ010_G0_bedroom_temp1_get received update
 then
    if (QQ010_G0_bedroom_temp1_get.state < 27) {
-      QQ010_G0_bedroom_switch1_set.postUpdate("ON")
-      logwarn("Temperature","changed to low")
+      QQ010_G0_bedroom_switch1_set.sendCommand(ON)
+      logWarn("Temperature","changed to low")
    }
    if (QQ010_G0_bedroom_temp1_get.state >28) {
       QQ010_G0_bedroom_switch1_set.sendCommand(OFF)
-      logwarn("Temperature","changed to low")
+      logWarn("Temperature","changed to low")
    }
 end
