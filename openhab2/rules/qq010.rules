@@ -1,11 +1,11 @@
 rule "Turn on Heat"
 when
-	Item QQ010/G0/bedroom/temp1/get received update
+   Item QQ010/G0/bedroom/temp1/get received update
 then
-	if (QQ010/G0/bedroom/temp1/get < 27) {
-		QQ010_G0_bedroom_switch1_set.sendCommand(ON)
-  	}
-  	if (QQ010/G0/bedroom/temp1/get >28) {
-		QQ010_G0_bedroom_switch1_set.sendCommand(OFF)
-  	}
+   if (QQ010/G0/bedroom/temp1/get < 27) {
+      QQ010_G0_bedroom_switch1_set.sendCommand(ON)
+   }
+   if (QQ010/G0/bedroom/temp1/get >28) {
+      QQ010_G0_bedroom_switch1_set.sendCommand(OFF)
+   }
 end
