@@ -1,0 +1,2 @@
+Thing exec:command:reload [command="./usr/local/projects/tools/reload_openhab.sh", interval=15, timeout=5, autorun=false]
+

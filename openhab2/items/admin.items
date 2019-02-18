@@ -1,0 +1,3 @@
+Switch Reload_Conf
+String reload_out {channel="exec:command:reload:output"}
+
