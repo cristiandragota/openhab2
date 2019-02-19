@@ -5,11 +5,9 @@ then
    if (QQ010_G0_bedroom_temp1_get.state < 27) {
       QQ010_G0_bedroom_switch1_set.sendCommand(ON)
       logInfo("Temp control","br turned ON")
-      say("Turn on heater as temperature is low")
    }
    if (QQ010_G0_bedroom_temp1_get.state >28) {
       QQ010_G0_bedroom_switch1_set.sendCommand(OFF)
       logInfo("Temp control","br turned OFF")
-      say("Temperature reached required and put heater OFF")
    }
 end
