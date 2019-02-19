@@ -1,3 +1,5 @@
 Switch Reload_Conf
 String reload_out {channel="exec:command:reload:output"}
+Number QQ010_temperature_hysteresis "Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010\temperature\hysteresis:state:default]"}
+Number QQ010_humidity_hysteresis "Humidity: [%.0f %%] %" <temperature> {mqtt="<[mosquitto:QQ010\humidity\hysteresis:state:default]"}
 
