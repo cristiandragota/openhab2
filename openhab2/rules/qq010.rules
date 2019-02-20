@@ -4,8 +4,7 @@ var Number get_temp_now
 
 rule "Turn on Heat"
 when
-   Item QQ010_G0_bedroom_temp1_get received update or 
-   Item QQ010_G0_bedroom_temp1_set received update  
+   Item QQ010_G0_bedroom_temp1_get changed or Item QQ010_G0_bedroom_temp1_set changed  
 then
    get_temp_now = (QQ010_G0_bedroom_temp1_get.state as Number)
    set_temp_low = (QQ010_G0_bedroom_temp1_set.state as Number) - (QQ010_temp_hysteresis.state as Number)
