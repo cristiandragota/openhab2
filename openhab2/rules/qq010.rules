@@ -5,8 +5,8 @@ rule "Turn on Heat"
 when
    Item QQ010_G0_bedroom_temp1_get received update
 then
-   set_temp_low=QQ010_G0_bedroom_temp1_set.state - QQ010_temp_hysteresis.state
-   set_temp_high=QQ010_G0_bedroom_temp1_set.state + QQ010_temp_hysteresis.state
+   set_temp_low = QQ010_G0_bedroom_temp1_set.state - QQ010_temp_hysteresis.state
+   set_temp_high = QQ010_G0_bedroom_temp1_set.state + QQ010_temp_hysteresis.state
    if (QQ010_G0_bedroom_temp1_get.state < set_temp_low) {
       QQ010_G0_bedroom_switch1_set.sendCommand(ON)
       logInfo("Temp control","Set temperature is: " + set_temp_low + " degrees")
