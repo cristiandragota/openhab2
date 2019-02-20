@@ -9,6 +9,6 @@ default = everyChange
 }
 
 Items {
-  * : strategy = every2Minutes, restoreOnStartup
+  QQ010*: strategy = every2Minutes, restoreOnStartup
 
 }
