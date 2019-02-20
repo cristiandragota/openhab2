@@ -1,6 +1,7 @@
 sitemap qq010 label="My data" {
     Frame label="G0_bedroom" {
 		Text item=QQ010_G0_bedroom_temp1_get icon="temperature" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"]
+		Text item=QQ010_G0_bedroom_temp1_update
 		Setpoint item=QQ010_G0_bedroom_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
 		Switch item=QQ010_G0_bedroom_switch1_set icon="switch"
 		Text item=QQ010_G0_bedroom_hum1_get icon="humidity"
