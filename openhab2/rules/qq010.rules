@@ -1,11 +1,14 @@
 var Number set_temp_high
 var Number set_temp_low
 var Number get_temp_now
+var String update_time
 
 rule "Turn on Heat"
 when
    Item QQ010_G0_bedroom_temp1_get changed or Item QQ010_G0_bedroom_temp1_set changed  
 then
+   update_time = now
+   QQ010_G0_bedroom_temp1_update.postUpdate(update_time)
    get_temp_now = (QQ010_G0_bedroom_temp1_get.state as Number)
    set_temp_low = (QQ010_G0_bedroom_temp1_set.state as Number) - (QQ010_temp_hysteresis.state as Number)
    set_temp_high = (QQ010_G0_bedroom_temp1_set.state as Number) + (QQ010_temp_hysteresis.state as Number)
