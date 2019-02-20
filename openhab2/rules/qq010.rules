@@ -1,20 +1,21 @@
 var Number set_temp_high
 var Number set_temp_low
+var Number get_temp_now
 
 rule "Turn on Heat"
 when
-   Item QQ010_G0_bedroom_temp1_get received update
+   Item QQ010_G0_bedroom_temp1_get received update or 
+   Item QQ010_G0_bedroom_temp1_set received update  
 then
-   set_temp_low = QQ010_G0_bedroom_temp1_set.state - QQ010_temp_hysteresis.state
-   set_temp_high = QQ010_G0_bedroom_temp1_set.state + QQ010_temp_hysteresis.state
-   if (QQ010_G0_bedroom_temp1_get.state < set_temp_low) {
+   get_temp_now = (QQ010_G0_bedroom_temp1_get.state as Number)
+   set_temp_low = (QQ010_G0_bedroom_temp1_set.state as Number) - (QQ010_temp_hysteresis.state as Number)
+   set_temp_high = (QQ010_G0_bedroom_temp1_set.state as Number) + (QQ010_temp_hysteresis.state as Number)
+   if (get_temp_now <= set_temp_low) {
       QQ010_G0_bedroom_switch1_set.sendCommand(ON)
-      logInfo("Temp control","Set temperature is: " + set_temp_low + " degrees")
-      logInfo("Temp control","br turned ON")
+      logInfo("Temp control","Set low temperature is: " + set_temp_low + " while current temperature is: " + get_temp_now + " -> turning heat ON")
    }
-   if (QQ010_G0_bedroom_temp1_get.state > set_temp_high) {
+   if (get_temp_now >= set_temp_high) {
       QQ010_G0_bedroom_switch1_set.sendCommand(OFF)
-      logInfo("Temp control","Set temperature is: " + set_temp_low + " degrees")      
-      logInfo("Temp control","br turned OFF")
+      logInfo("Temp control","Set high temperature is: " + set_temp_high + " while current temperature is: " + get_temp_now + " -> turning heat OFF")      
    }
 end
