@@ -1,14 +1,19 @@
-Strategies {
-everyMinute     : "0 * * * * ?"
-every2Minutes : "0 */2 * * * ?"
-every5Minutes : "0 */5 * * * ?"
-everyHour   : "0 0 * * * ?"
-everyDay    : "0 0 0 * * ?"
+Strategies { 
 
-default = everyChange
+everyDay : "0 0 0 * * ?"
+
+default = everyUpdate 
 }
-
+ 
 Items {
-  QQ010*: strategy = every2Minutes, restoreOnStartup
+
+QQ010_G0_bedroom_temp1_get : strategy = everyChange, restoreOnStartup
+QQ010_G0_bedroom_temp1_set : strategy = everyChange, restoreOnStartup
+QQ010_G0_bedroom_hum1_get : strategy = everyChange, restoreOnStartup
+QQ010_G0_bedroom_hum1_set : strategy = everyChange, restoreOnStartup
+QQ010_G0_bedroom_switch1_set : strategy = everyChange, restoreOnStartup
+QQ010_G0_bedroom_switch2_set : strategy = everyChange, restoreOnStartup
+QQ010_temp_hysteresis : strategy = everyChange, restoreOnStartup
+QQ010_hum_hysteresis : strategy = everyChange, restoreOnStartup
 
 }
