@@ -2,11 +2,15 @@ import paho.mqtt.client as mqtt
 import time
 
 def on_message(client, userdata, message):
-    print("message received " ,str(message.payload.decode("utf-8")))
     print("message topic=",message.topic)
     print("message qos=",message.qos)
     print("message retain flag=",message.retain)
-
+    if message.topic == QQ010/G0/bedroom/temp1/set:
+        set_temp1 = str(message.payload.decode("utf-8"))
+            print("message received, the set value is:  " ,set_temp1)
+    if message.topic == QQ010/G0/bedroom/switch1/set:
+        set_switch1 = str(message.payload.decode("utf-8"))
+            print("message received, the unit is: " ,set_temp1)
 
 mqttpush = mqtt.Client("Push_mqtt_client")
 mqttpush.username_pw_set("temp1","ascp01")
