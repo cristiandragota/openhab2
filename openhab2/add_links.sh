@@ -1,6 +1,5 @@
 echo "Cleaning the local configuration from /etc/openhab2/......"
 sudo rm -rf /etc/openhab2/*
-time 5
 echo "Adding the links to configuration files from current directory:" $PWD
 sudo ln -s $PWD/rules /etc/openhab2/rules
 sudo ln -s $PWD/items /etc/openhab2/items
