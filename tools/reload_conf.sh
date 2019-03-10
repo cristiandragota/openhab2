@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'Start of the script'
-cd /usr/local/projects
+cd ~/openhab2
 sudo git pull origin master
 echo 'Loading the configuration done'
 sleep 2s
