@@ -19,6 +19,6 @@ client.loop_start() #start the loop
 print("Subscribing to topic","QQ010/G0/bedroom/temp1/get")
 client.subscribe("QQ010/G0/bedroom/temp1/get")
 print("Subscribing to topic","QQ010/G0/bedroom/switch1/set")
-client.subscribe("QQ010/G0/bedroom/temp1/set")
+client.subscribe("QQ010/G0/bedroom/switch1/set")
 time.sleep(4) # wait
 client.loop_stop() #stop the loop

@@ -1,7 +1,7 @@
 Group G0_bedroom "Bedroom"
 Group G0_livingroom "Livingroom"
 Group G0_kitchen "Kitchen"
-Number QQ010_G0_bedroom_temp2_get "Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp2/get:state:default], >[mosquitto:QQ010/G0/bedroom/temp2/get:command:*:default]"}
+Number QQ010_G0_bedroom_temp1_get "Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/get:state:default], >[mosquitto:QQ010/G0/bedroom/temp1/get:command:*:default]"}
 String update_QQ010_G0_bedroom_temp1 "Last update: [%s]" {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/update:state:default]"}
 Number QQ010_G0_bedroom_temp1_set "Set Temperature [%.1f °C]" <temperature> {mqtt="<[mosquitto:QQ010/G0/bedroom/temp1/set:state:default], >[mosquitto:QQ010/G0/bedroom/temp1/set:command:*:default]"}
 Number QQ010_G0_bedroom_hum1_get "Humidity: [%.0f %%] %" <humidity> {mqtt="<[mosquitto:QQ010/G0/bedroom/hum1/get:state:default], >[mosquitto:QQ010/G0/bedroom/hum1/get:command:*:default]"}
