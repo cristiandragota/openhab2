@@ -22,7 +22,7 @@ mqttpush.on_message = on_message
 #mqttpush.on_publish = on_publish
 #mqttpush.on_subscribe = on_subscribe
 
-Broker = "futureconcepts.tech"
+Broker = "localhost"
 print("Initializing the values ........")
 set_temp1 = 0
 set_switch1 = 0
@@ -43,5 +43,5 @@ if set_switch1 == "OFF":
 if set_switch1 == "ON":
     new_temp1 = get_temp1 + 0.1
 mqttpush.publish("QQ010/G0/bedroom/temp1/get",new_temp1)
-time.sleep(30)
-#mqttpush.loop_stop()
+time.sleep(2)
+mqttpush.loop_stop()
