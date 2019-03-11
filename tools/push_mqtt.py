@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import time
+import random
 
 def on_message(client, userdata, message):
     global set_switch1
@@ -35,9 +36,9 @@ mqttpush.subscribe("QQ010/G0/bedroom/switch1/set")
 time.sleep(2)
 print("Publish to topic: ","QQ010/G0/bedroom/temp1/get")
 if set_switch1 == "OFF":
-    new_temp1 = float(get_temp1) - 0.2
+    new_temp1 = float(get_temp1) - (random.randint(0,5)*0.05)
 if set_switch1 == "ON":
-    new_temp1 = float(get_temp1) + 0.1
-print("Calculated value is:",str(new_temp1))
-mqttpush.publish("QQ010/G0/bedroom/temp1/get",new_temp1,retain=True)
+    new_temp1 = float(get_temp1) + (random.randint(0,5)*0.05)
+print("Calculated value is:",str("%.2f" % new_temp1))
+mqttpush.publish("QQ010/G0/bedroom/temp1/get",str("%.2f" % new_temp1),retain=True)
 mqttpush.loop_stop()
