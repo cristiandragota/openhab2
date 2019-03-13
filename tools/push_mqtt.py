@@ -36,7 +36,7 @@ mqttpush.subscribe("QQ010/G0/bedroom/switch1/set")
 time.sleep(2)
 print("Publish to topic: ","QQ010/G0/bedroom/temp1/get")
 if set_switch1 == "OFF":
-    new_temp1 = float(get_temp1) - (random.randint(0,5)*0.05)
+    new_temp1 = float(get_temp1) - (random.randint(0,2)*0.05)
 if set_switch1 == "ON":
     new_temp1 = float(get_temp1) + (random.randint(0,5)*0.05)
 print("Calculated value is:",str("%.2f" % new_temp1))
