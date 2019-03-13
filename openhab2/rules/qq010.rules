@@ -2,7 +2,7 @@ var Number set_temp_high
 var Number set_temp_low
 var Number get_temp_now
 
-rule "Turn on Heat"
+rule "Turn on Heat Bedroom"
 when
    Item QQ010_G0_bedroom_temp1_get changed or Item QQ010_G0_bedroom_temp1_set changed  
 then
@@ -14,10 +14,30 @@ then
    set_temp_high = (QQ010_G0_bedroom_temp1_set.state as Number) + (QQ010_temp_hysteresis.state as Number)
    if (get_temp_now <= set_temp_low) {
       QQ010_G0_bedroom_switch1_set.sendCommand(ON)
-      logInfo("Temp control","Set low temperature is: " + set_temp_low + " while current temperature is: " + get_temp_now + " -> turning heat ON at: " + currentTime)
+      logInfo("Temp control","Bedroom low temperature is: " + set_temp_low + " while current temperature is: " + get_temp_now + " -> turning heat ON at: " + currentTime)
    }
    if (get_temp_now >= set_temp_high) {
       QQ010_G0_bedroom_switch1_set.sendCommand(OFF)
-      logInfo("Temp control","Set high temperature is: " + set_temp_high + " while current temperature is: " + get_temp_now + " -> turning heat OFF at: "+ currentTime) 
+      logInfo("Temp control","Bedroom high temperature is: " + set_temp_high + " while current temperature is: " + get_temp_now + " -> turning heat OFF at: "+ currentTime) 
+   }
+end
+
+rule "Turn on Heat Livingroom"
+when
+   Item QQ010_G0_livingroom_temp1_get changed or Item QQ010_G0_livingroom_temp1_set changed  
+then
+   val String currentTime = String::format( "%1$tl:%1$tM%1$tp on %1$tB %1$te, %1$tY", new java.util.Date )
+   logInfo("Temp control","Last update: " + QQ010_G0_livingroom_temp1_get.lastUpdate()) 
+   QQ010_G0_livingroom_temp1_upd.postUpdate(currentTime)
+   get_temp_now = (QQ010_G0_livingroom_temp1_get.state as Number)
+   set_temp_low = (QQ010_G0_livingroom_temp1_set.state as Number) - (QQ010_temp_hysteresis.state as Number)
+   set_temp_high = (QQ010_G0_livingroom_temp1_set.state as Number) + (QQ010_temp_hysteresis.state as Number)
+   if (get_temp_now <= set_temp_low) {
+      QQ010_G0_livingroom_switch1_set.sendCommand(ON)
+      logInfo("Temp control","Living low temperature is: " + set_temp_low + " while current temperature is: " + get_temp_now + " -> turning heat ON at: " + currentTime)
+   }
+   if (get_temp_now >= set_temp_high) {
+      QQ010_G0_livingroom_switch1_set.sendCommand(OFF)
+      logInfo("Temp control","Living high temperature is: " + set_temp_high + " while current temperature is: " + get_temp_now + " -> turning heat OFF at: "+ currentTime) 
    }
 end
