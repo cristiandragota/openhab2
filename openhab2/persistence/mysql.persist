@@ -18,5 +18,16 @@ QQ010_G0_bedroom_switch1_set : strategy = everyChange, restoreOnStartup
 QQ010_G0_bedroom_switch2_set : strategy = everyChange, restoreOnStartup
 QQ010_temp_hysteresis : strategy = everyUpdate, restoreOnStartup
 QQ010_hum_hysteresis : strategy = everyUpdate, restoreOnStartup
+QQ010_G0_livingroom_temp1_get : strategy = everyUpdate, restoreOnStartup
+QQ010_G0_livingroom_temp1_set : strategy = everyUpdate, restoreOnStartup
+QQ010_G0_livingroom_hum1_get : strategy = everyUpdate, restoreOnStartup
+QQ010_G0_livingroom_hum1_set : strategy = everyUpdate, restoreOnStartup
+QQ010_G0_livingroom_switch1_set : strategy = everyChange, restoreOnStartup
+QQ010_G0_livingroom_switch2_set : strategy = everyChange, restoreOnStartup
+QQ010_G0_kitchen_switch1_set : strategy = everyChange, restoreOnStartup
+QQ010_G0_kitchen_temp1_get : strategy = everyUpdate, restoreOnStartup
+QQ010_G0_kitchen_temp1_set : strategy = everyUpdate, restoreOnStartup
+QQ010_G0_kitchen_hum1_get : strategy = everyUpdate, restoreOnStartup
+
 
 }

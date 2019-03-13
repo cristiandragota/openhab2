@@ -22,7 +22,7 @@ mqttpush.on_message = on_message
 #mqttpush.on_publish = on_publish
 #mqttpush.on_subscribe = on_subscribe
 
-Broker = "localhost"
+Broker = "futureconcepts.tech"
 print("Initializing the values ........")
 set_switch1 = 0
 get_temp1 = 0

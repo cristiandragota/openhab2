@@ -8,7 +8,7 @@ when
 then
    val String currentTime = String::format( "%1$tl:%1$tM%1$tp on %1$tB %1$te, %1$tY", new java.util.Date )
    logInfo("Temp control","Last update: " + QQ010_G0_bedroom_temp1_get.lastUpdate()) 
-   update_QQ010_G0_bedroom_temp1.postUpdate(currentTime)
+   QQ010_G0_bedroom_temp1_upd.postUpdate(currentTime)
    get_temp_now = (QQ010_G0_bedroom_temp1_get.state as Number)
    set_temp_low = (QQ010_G0_bedroom_temp1_set.state as Number) - (QQ010_temp_hysteresis.state as Number)
    set_temp_high = (QQ010_G0_bedroom_temp1_set.state as Number) + (QQ010_temp_hysteresis.state as Number)
