@@ -1,5 +1,5 @@
 sitemap qq010 label="Climate control" {
-    Group item=G0_bedroom {
+    Group item=QQ010_G0_bedroom_temp1_get label="Bedroom [%.2f °C]" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"] {
     	Frame {
 			Text item=QQ010_G0_bedroom_temp1_get icon="temperature" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"]
 			Text item=QQ010_G0_bedroom_temp1_upd
