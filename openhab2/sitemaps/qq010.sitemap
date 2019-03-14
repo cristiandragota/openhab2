@@ -13,21 +13,32 @@ sitemap qq010 label="Climate control" {
 			Chart item=QQ010_G0_bedroom_temp1_get period=D refresh=30000
 		}    
     }
-    Group item=G0_livingroom {
-		Text item=QQ010_G0_livingroom_temp1_get icon="temperature" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"]
-		Text item=QQ010_G0_livingroom_temp1_upd
-		Setpoint item=QQ010_G0_livingroom_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
-		Switch item=QQ010_G0_livingroom_switch1_set icon="switch"
-		Text item=QQ010_G0_livingroom_hum1_get icon="humidity"
-		Setpoint item=QQ010_G0_livingroom_hum1_set icon="humidity" minValue=20 maxValue=100 step=5
-		Switch item=QQ010_G0_livingroom_switch2_set icon="switch"
+    Group item=QQ010_G0_livingroom_temp1_get label="Livingroom [%.2f °C]" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"] {
+    	Frame {
+			Text item=QQ010_G0_livingroom_temp1_get icon="temperature" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"]
+			Text item=QQ010_G0_livingroom_temp1_upd
+			Setpoint item=QQ010_G0_livingroom_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
+			Switch item=QQ010_G0_livingroom_switch1_set icon="switch"
+			Text item=QQ010_G0_livingroom_hum1_get icon="humidity"
+			Setpoint item=QQ010_G0_livingroom_hum1_set icon="humidity" minValue=20 maxValue=100 step=5
+			Switch item=QQ010_G0_livingroom_switch2_set icon="switch"
+    	}
+		Frame label="Temperature overview:" icon="chart" {		
+			Chart item=QQ010_G0_livingroom_temp1_get period=D refresh=30000
+		}    
     }
-    Group item=G0_kitchen {
-    	Text item=QQ010_G0_kitchen_temp1_get icon="temperature" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"]
-		Text item=QQ010_G0_kitchen_temp1_upd
-		Setpoint item=QQ010_G0_kitchen_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
-		Switch item=QQ010_G0_kitchen_switch1_set icon="switch"
-		Text item=QQ010_G0_kitchen_hum1_get icon="humidity"
+    Group item=QQ010_G0_kitchen_temp1_get label="Kitchen [%.2f °C]" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"] {
+    	Frame {
+	    	Text item=QQ010_G0_kitchen_temp1_get icon="temperature" labelcolor=[>35="red", >=25="orange", >=17="green", <17="blue"]
+			Text item=QQ010_G0_kitchen_temp1_upd
+			Setpoint item=QQ010_G0_kitchen_temp1_set icon="temperature" minValue=15 maxValue=30 step=0.5
+			Switch item=QQ010_G0_kitchen_switch1_set icon="switch"
+			Text item=QQ010_G0_kitchen_hum1_get icon="humidity"
+		}
+		Frame label="Temperature overview:" icon="chart" {		
+			Chart item=QQ010_G0_kitchen_temp1_get period=D refresh=30000
+		}    
+
     }
 
 }
