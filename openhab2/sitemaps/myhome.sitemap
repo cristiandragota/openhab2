@@ -16,7 +16,7 @@ sitemap myhome label="My Home" {
 
     }
     Frame label="Historical data" icon="chart"  {
-       Group item=Graph label="Query history" {
+       Group item=QQ010_G0_bedroom_temp1_get {
          Switch item=Temp_Chart_Period label="Chart Period" icon="chart" mappings=[0="Hour",1="4 Hours", 2="Day", 3="Week"]
          Chart item=QQ010_G0_bedroom_temp1_get period=h refresh=30000 visibility=[Temp_Chart_Period==0,Temp_Chart_Period=="NULL"]
          Chart item=QQ010_G0_bedroom_temp1_get period=4h refresh=30000 visibility=[Temp_Chart_Period==1]
